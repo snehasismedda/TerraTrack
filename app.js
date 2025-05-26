@@ -23,7 +23,7 @@ const { isLoggedIn } = require("./middleware.js");
 
 const app = express();
 const port = 8080;
-const dbURL = process.env.MONGO_DB_URL;
+const dbURL = process.env.ATLAS_DB_URL;
 
 // DB Connection
 async function main() {
