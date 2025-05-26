@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 const Category = require("../models/categories");
 
-mongoose.connect("mongodb://127.0.0.1:27017/wanderlust")
+mongoose.connect(process.env.ATLAS_DB_URL)
   .then(() => {
-    console.log("MongoDB connection open");
+    console.log("DB connection open");
   })
   .catch((err) => {
-    console.error("MongoDB connection error", err);
+    console.error("DB connection error", err);
   });
 
 const categories = [
