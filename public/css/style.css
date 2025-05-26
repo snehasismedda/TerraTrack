@@ -1,0 +1,126 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+    flex:1;
+}
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+.fa-compass{
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link{
+    color: #222222 !important;
+}
+
+/* footer */
+
+.f-info-links a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+
+.f-info-socials, .f-info-links, .f-info-brands{
+    width: 100%;
+    font-size: 1.2rem;
+    margin-right: 2rem;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+    margin: 1rem 0rem;
+}
+
+
+.f-info{
+    text-align: center;
+    display: flex;
+    height:8rem;
+    background-color: #ebebeb;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+
+/* card */
+
+.listing-card{
+    border:none !important;
+    margin-bottom: 2rem ;
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body{
+    padding:0rem !important;
+
+}
+
+.card-text{
+    font-weight: 400 ;
+}
+
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background: #FFF;
+}
+
+
+/* show */
+.show-img{
+    height: 30vh;
+}
+.btns{
+    display: flex;
+}
+
+.modern-card-body {
+    padding: 1.5rem;
+    background-color: #fdfdfd;
+    border-radius: 0 0 1rem 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.card-title {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.description {
+    color: #555;
+    line-height: 1.6;
+}
+
+.price-location {
+    font-size: 0.95rem;
+}
+
+
+/* star rating */
+
+#filterButtons::-webkit-scrollbar {
+  display: none;                 /* Chrome, Safari, Edge */
+}
+

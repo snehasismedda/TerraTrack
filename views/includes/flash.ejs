@@ -1,0 +1,33 @@
+<% if(success && success.length>0 ){ %>
+    <div id="flash-alert" 
+     class="alert alert-success alert-dismissible fade show position-fixed top-0 end-0 m-4 shadow"
+     style="z-index: 1050; min-width: 300px; max-width: 400px;">
+
+         
+      <%= success %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  
+      <!-- Progress Bar -->
+      <div class="progress position-absolute bottom-0 start-0 w-100" style="height: 4px;">
+        <div id="flash-timer" class="progress-bar bg-success" style="width: 100%; transition: width 5s linear;"></div>
+      </div>
+    </div>
+  <% } %>
+
+
+<% if(error && error.length>0 ){ %>
+    <div id="flash-alert" 
+     class="alert alert-danger alert-dismissible fade show position-fixed top-0 end-0 m-4 shadow"
+     style="z-index: 1050; min-width: 300px; max-width: 400px;">
+
+         
+      <%= error %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  
+      <!-- Progress Bar -->
+      <div class="progress position-absolute bottom-0 start-0 w-100" style="height: 4px;">
+        <div id="flash-timer" class="progress-bar bg-danger" style="width: 100%; transition: width 5s linear;"></div>
+      </div>
+    </div>
+  <% } %>
+  

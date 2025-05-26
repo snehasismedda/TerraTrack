@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings">
+      <img src="https://res.cloudinary.com/dzzitunsp/image/upload/v1748170384/wanderlast_logo_uyu7sp.png" alt="logo"  style="height: 80px; width: auto;">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarContent">
+      <!-- Left nav links -->
+      <div class="d-flex gap-3">
+        <a class="nav-link fs-8" href="/listings">All Listings</a>
+      </div>
+
+<div class="d-flex gap-3">
+  <form class="d-flex w-100" role="search" action="/search" method="GET">
+    <div class="position-relative w-100">
+      <input 
+        class="form-control rounded-pill px-5 py-2 fs-6" 
+        placeholder="Search destination" 
+        name="q" 
+        required
+      >
+      <button 
+        class="btn btn-danger rounded-circle position-absolute top-50 end-0 translate-middle-y me-2 d-flex align-items-center justify-content-center" 
+        type="submit"
+        style="width: 30px; height: 30px;"
+      >
+        <i class="fa-solid fa-magnifying-glass text-white"></i>
+      </button>
+    </div>
+  </form>
+</div>
+
+
+      <!-- Right auth links -->
+      <div class="d-flex gap-3">
+          <a class="btn btn-outline-primary" href="/listings/new">Add New Listing</a>
+          
+          <% if (!currUser) { %>
+              <a class="btn btn-outline-success" href="/login">Log In</a>
+          <% } else { %>
+              <a class="btn btn-outline-danger" href="/logout">Log Out</a>
+          <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

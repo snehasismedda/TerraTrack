@@ -1,0 +1,81 @@
+<% layout('layouts/boilerplate') -%>
+<body>
+    <div class="row">
+        <div class="col col-8 offset-2">
+            <div class="container">
+                <br>
+                <h3>Edit your listing</h3>
+                <br>
+                <form action="/listings/<%= listing._id %>?_method=PATCH" method="POST" class="listing-form needs-validation show-loader" enctype="multipart/form-data" novalidate>
+                    <!-- Title Field -->
+                    <div class="form-group mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" name="listings[title]" id="title" placeholder="Enter title" class="form-control" value="<%= listing.title %>" required>
+                        <div class="invalid-feedback">Title is required.</div>
+                    </div>
+        
+                    <!-- Description Field -->
+                    <div class="form-group mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="listings[description]" id="description" rows="4" placeholder="Enter description" class="form-control" required><%= listing.description %></textarea>
+                        <div class="invalid-feedback">Description is required.</div>
+                    </div>
+        
+                    <!-- Image URL Field -->
+                    <div class="form-group mb-3">
+                        <label for="image" class="form-label">Upload Listing Image</label>
+                        <input type="file" name="listings[image]" id="image" class="form-control" accept="image/*" >
+                    </div>
+
+                    <!-- Price and Location Row -->
+                    <div class="row">
+                        <!-- Price Field -->
+                        <div class="form-group mb-3 col-md-5">
+                            <label for="price" class="form-label">Price per Night (INR):</label>
+                            <input type="number" name="listings[price]" id="price" min="0" step="0.01" class="form-control" value="<%= listing.price %>" required>
+                            <div class="invalid-feedback">Price is required and must be a positive number.</div>
+                        </div>
+            
+                        <!-- Location Field -->
+                        <div class="form-group mb-3 col-md-7">
+                            <label for="location" class="form-label">Location:</label>
+                            <input type="text" name="listings[location]" id="location" placeholder="e.g., Zermatt" class="form-control" value="<%= listing.location %>" required>
+                            <div class="invalid-feedback">Location is required.</div>
+                        </div>
+                    </div>
+        
+                    <!-- Country Field -->
+                    <div class="form-group mb-3">
+                        <label for="country" class="form-label">Country:</label>
+                        <input type="text" name="listings[country]" id="country" placeholder="e.g., Switzerland" class="form-control" value="<%= listing.country %>" required>
+                        <div class="invalid-feedback">Country is required.</div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="form-label">Edit Categories</label>
+                        <div class="d-flex flex-wrap gap-3">
+                            <% categories.forEach(cat => { %>
+                            <div class="form-check">
+                                <input 
+                                    class="form-check-input" 
+                                    type="checkbox" 
+                                    name="category" 
+                                    value="<%= cat._id %>" 
+                                    id="cat-<%= cat._id %>"
+                                    <% if (listing.category && listing.category.some(c => c.toString() === cat._id.toString())) { %> checked <% } %>
+                                >
+                                <label class="form-check-label" for="cat-<%= cat._id %>">
+                                    <%= cat.name %>
+                                </label>
+                            </div>
+                            <% }) %>
+                        </div>
+                    </div>
+
+                    <br>
+                    <button type="submit" class="btn btn-dark">Submit</button>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>

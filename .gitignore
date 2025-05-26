@@ -1,0 +1,9 @@
+# Node dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Windows-specific
+ehthumbs.db
+Icon?

@@ -1,0 +1,30 @@
+<% layout("layouts/boilerplate.ejs") %>
+
+<div class="row mt-3">
+    <div class="col-6 offset-3" >
+        <div class="container">
+            <b><h2 class="offset-2">Welcome to TerraTrack</h2></b>
+            <form action="/login" method="post" class="needs-validation" novalidate required>
+                <div class="form-group mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Enter username" class="form-control" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter password" class="form-control" required>
+                </div>
+
+                
+                <div class="text-center">
+                    <p class="mb-0">Don't have an account? 
+                        <a href="/signup" class="text-decoration-none text-primary">Sign up here</a>
+                    </p>
+                </div>
+                
+                <button class="btn btn-success offset-5 mt-3">Log in</button>
+            </form>
+        </div>
+    </div>
+
+</div>
